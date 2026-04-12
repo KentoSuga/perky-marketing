@@ -6,6 +6,7 @@ import { defineConfig } from "vite";
 const plugins = [react(), tailwindcss()];
 
 export default defineConfig({
+  base: "https://perky-marketing.vercel.app",
   plugins,
   resolve: {
     alias: {
