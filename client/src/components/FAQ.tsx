@@ -1,104 +1,32 @@
-/*
- * Design: Golden Hour — Warm Organic Premium
- * FAQ: Accordion with warm styling
- */
 import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  {
-    q: "How much does Perky cost?",
-    a: "Perky is free to get started. We offer a generous free tier for small cafés, with premium plans for businesses that want advanced analytics, custom branding, and priority AI review responses. No hidden fees, no long-term contracts.",
-  },
-  {
-    q: "Do my customers need to download an app?",
-    a: "No. Perky is entirely web-based. Customers simply scan the QR code with their phone camera and everything works instantly in their browser. No app downloads, no sign-ups, no friction.",
-  },
-  {
-    q: "How do cross-network points work?",
-    a: "When a customer earns Perky Points at your café, those points go into their universal wallet. They can spend them at any café in the Perky network. This means customers from other cafés discover yours, and your regulars explore the wider community. Everyone benefits.",
-  },
-  {
-    q: "What kind of rewards can I offer?",
-    a: "Anything you like! Free coffees, percentage discounts, free pastries, buy-one-get-one deals, seasonal specials — you have full control. Set up rewards in your dashboard and they instantly appear on the reward wheel for your customers.",
-  },
-  {
-    q: "How does the AI review response work?",
-    a: "Our AI reads every new Google review for your business and crafts a thoughtful, personalised response in your brand's tone. It thanks positive reviewers, addresses concerns in negative reviews, and always sounds human. You can review and edit responses before they go live, or let them publish automatically.",
-  },
-  {
-    q: "Do I need to change my POS system?",
-    a: "Not at all. Perky works completely independently of your POS. There's no integration required, no hardware to install, and no technical setup. Just print a QR code and place it on your counter.",
-  },
-  {
-    q: "Is Perky only for cafés in New Zealand and Australia?",
-    a: "Perky is built for independent cafés and restaurants across New Zealand and Australia. We're expanding the network to support more local businesses in the ANZ region and beyond.",
-  },
-  {
-    q: "How quickly will I see results?",
-    a: "Most cafés see a noticeable increase in Google reviews within the first two weeks. The loyalty programme builds momentum over the first month as regulars start accumulating points. By month two, you'll typically see a measurable increase in repeat visits.",
-  },
+  { q: "How much does Perky cost?", a: "Perky starts at $100/month for our Starter plan, with a one-time $30 setup fee. Our Premium plan is $150/month and includes AI-powered social media content generation and follow-up lists. No hidden fees, no long-term contracts." },
+  { q: "Do my customers need to download an app?", a: "No. Perky is entirely web-based. Customers simply scan the QR code with their phone camera and everything works instantly in their browser. No app downloads, no sign-ups, no friction." },
+  { q: "How do cross-network points work?", a: "When a customer earns Perky Points at your business, those points go into their universal wallet. They can spend them at any business in the Perky network. This means customers from other businesses discover yours, and your regulars explore the wider community. Everyone benefits." },
+  { q: "What kind of rewards can I offer?", a: "Anything you like! Free coffees, percentage discounts, free pastries, buy-one-get-one deals, seasonal specials — you have full control. Set up rewards in your dashboard and they instantly appear on the reward wheel for your customers." },
+  { q: "Do I need to change my POS system?", a: "Not at all. Perky works completely independently of your POS. There's no integration required, no hardware to install, and no technical setup. Just print a QR code and place it on your counter." },
+  { q: "Is Perky available worldwide?", a: "Perky is currently built for businesses across New Zealand and Australia. We're expanding the network to support more local businesses worldwide." },
+  { q: "How quickly will I see results?", a: "Most businesses see a noticeable increase in repeat visits within the first two weeks. The loyalty programme builds momentum over the first month as regulars start accumulating points. By month two, you'll typically see a measurable increase in repeat visits." },
 ];
 
 export default function FAQ() {
   return (
-    <section id="faq" className="relative py-20 md:py-28 bg-oat overflow-hidden">
-      {/* Organic blob */}
+    <section id="faq" className="relative py-20 md:py-28 bg-white overflow-hidden">
       <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-fern/[0.03] blur-3xl" />
-
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12 md:mb-16"
-          >
-            <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>
-              Frequently Asked Questions
-            </span>
-            <h2
-              className="text-3xl sm:text-4xl md:text-5xl text-espresso leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Got Questions?{" "}
-              <span className="text-kowhai-gold">We've Got Answers</span>
-            </h2>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-12 md:mb-16">
+            <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>Frequently Asked Questions</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-espresso leading-tight" style={{ fontFamily: "var(--font-display)" }}>Got Questions?{" "}<span className="text-kowhai-gold">We've Got Answers</span></h2>
           </motion.div>
-
-          {/* Accordion */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
-                <AccordionItem
-                  key={i}
-                  value={`item-${i}`}
-                  className="bg-white rounded-xl border border-kowhai-amber/10 px-6 overflow-hidden data-[state=open]:shadow-md data-[state=open]:shadow-espresso/5 transition-shadow duration-300"
-                >
-                  <AccordionTrigger
-                    className="text-left text-base md:text-lg font-semibold text-espresso hover:text-kowhai-gold transition-colors py-5 [&[data-state=open]]:text-kowhai-gold"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {faq.q}
-                  </AccordionTrigger>
-                  <AccordionContent
-                    className="text-base text-espresso-light/70 leading-relaxed pb-5"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {faq.a}
-                  </AccordionContent>
+                <AccordionItem key={i} value={`item-${i}`} className="bg-oat/50 rounded-xl border border-kowhai-amber/10 px-6 overflow-hidden data-[state=open]:shadow-md data-[state=open]:shadow-espresso/5 transition-shadow duration-300">
+                  <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-espresso hover:text-kowhai-gold transition-colors py-5 [&[data-state=open]]:text-kowhai-gold" style={{ fontFamily: "var(--font-display)" }}>{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-base text-espresso-light/70 leading-relaxed pb-5" style={{ fontFamily: "var(--font-body)" }}>{faq.a}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

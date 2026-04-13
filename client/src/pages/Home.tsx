@@ -1,16 +1,9 @@
-/*
- * Design: Golden Hour — Warm Organic Premium
- * Home page: Assembles all sections in order
- * Perky — AI-Powered Loyalty for NZ Independent Cafés
- */
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import TrustBar from "@/components/TrustBar";
 import HowItWorks from "@/components/HowItWorks";
+import GamifiedLoyalty from "@/components/GamifiedLoyalty";
 import Features from "@/components/Features";
-import NetworkExplainer from "@/components/NetworkExplainer";
-import ForOwners from "@/components/ForOwners";
-import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -21,12 +14,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
         <HowItWorks />
+        <GamifiedLoyalty />
         <Features />
-        <NetworkExplainer />
-        <ForOwners />
-        <Testimonials />
+        <Pricing />
         <FAQ />
         <CTA />
       </main>
