@@ -24,7 +24,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Perky <onboarding@resend.dev>",
+        from: "Perky <noreply@perky-app.com>",
         to: "support@perky-app.com",
         subject: `New Sign-Up: ${plan}`,
         html: `
