@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
-const WHEEL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663470458225/Hu3TKythjyzGz5mGfi5V7t/reward-wheel-LxKNFKLF7MXkALpNA4EFBF.webp";
-
 const bullets = [
   "Instant gratification drives repeat visits",
   "You control every reward offered",
@@ -17,10 +15,11 @@ export default function GamifiedLoyalty() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="flex items-center justify-center">
             <div className="relative">
-              <img src={WHEEL_IMG} alt="Perky spin wheel app on phone" className="w-72 md:w-80 h-auto drop-shadow-2xl" />
-              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-5 py-2.5 shadow-lg shadow-espresso/8 border border-kowhai-amber/15">
-                <span className="text-sm font-semibold text-espresso" style={{ fontFamily: "var(--font-body)" }}>🎉 You won a free flat white!</span>
-              </motion.div>
+              <img
+                src="/spin-phone-mockup.png"
+                alt="Perky spin wheel app on phone"
+                className="w-72 md:w-80 h-auto drop-shadow-2xl rounded-2xl"
+              />
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.15 }}>

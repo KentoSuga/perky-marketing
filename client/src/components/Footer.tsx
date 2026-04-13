@@ -10,7 +10,7 @@ const footerLinks = {
   ],
   Support: [
     { label: "FAQ", href: "#faq" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Terms of Service", href: "/terms" },
   ],
 };
 
@@ -43,7 +43,7 @@ export default function Footer() {
             <p className="text-xs text-oat/25" style={{ fontFamily: "var(--font-body)" }}>&copy; {new Date().getFullYear()} Perky. All rights reserved.</p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-xs text-oat/25 hover:text-oat/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>Privacy</a>
-              <a href="#" className="text-xs text-oat/25 hover:text-oat/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>Terms</a>
+              <a href="/terms" className="text-xs text-oat/25 hover:text-oat/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>Terms</a>
               <a href="#" className="text-xs text-oat/25 hover:text-oat/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>Cookies</a>
             </div>
           </div>

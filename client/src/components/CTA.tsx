@@ -8,6 +8,16 @@ export default function CTA() {
   const [plan, setPlan] = useState("starter");
   const [notes, setNotes] = useState("");
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const planLabel = plan === "premium" ? "Perky Premium - $150/month" : "Perky Starter - $100/month";
+    const subject = encodeURIComponent(`New Sign-Up: ${planLabel}`);
+    const body = encodeURIComponent(
+      `Business Email: ${email}\nSelected Plan: ${planLabel}\n\nNotes:\n${notes || "(none)"}`
+    );
+    window.location.href = `mailto:support@perky-app.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="get-started" className="relative py-20 md:py-28 overflow-hidden bg-espresso">
       <div className="absolute inset-0 bg-gradient-to-br from-espresso via-espresso-light/30 to-espresso" />
@@ -22,10 +32,10 @@ export default function CTA() {
             Ready to Build Your{" "}<span className="text-kowhai-amber">Loyal Community?</span>
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg text-oat/60 mb-10" style={{ fontFamily: "var(--font-body)" }}>Book a free trial now!</motion.p>
-          <motion.form initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-col gap-4 text-left" onSubmit={(e) => e.preventDefault()}>
+          <motion.form initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-col gap-4 text-left" onSubmit={handleSubmit}>
             <div>
               <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Business Email</label>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@yourbusiness.com" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat placeholder:text-oat/30 focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all" style={{ fontFamily: "var(--font-body)" }} />
+              <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@yourbusiness.com" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat placeholder:text-oat/30 focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all" style={{ fontFamily: "var(--font-body)" }} />
             </div>
             <div>
               <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Select Plan</label>
