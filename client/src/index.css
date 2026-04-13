@@ -41,7 +41,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Kōwhai brand colors */
+  /* Perky brand colors */
   --color-kowhai-amber: oklch(0.78 0.14 75);
   --color-kowhai-gold: oklch(0.72 0.15 70);
   --color-kowhai-deep: oklch(0.62 0.15 65);

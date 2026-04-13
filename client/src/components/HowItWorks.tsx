@@ -13,7 +13,7 @@ const steps = [
     num: "01",
     icon: QrCode,
     title: "Print One QR Code",
-    description: "Place a single Kōwhai QR code on your counter. That's the only setup you'll ever need. No app downloads, no complicated POS integrations.",
+    description: "Place a single Perky QR code on your counter. That's the only setup you'll ever need. No app downloads, no complicated POS integrations.",
     color: "bg-kowhai-amber/10 text-kowhai-gold",
     borderColor: "border-kowhai-amber/20",
   },
@@ -21,7 +21,7 @@ const steps = [
     num: "02",
     icon: Star,
     title: "Customers Scan & Earn",
-    description: "When a customer scans, they instantly earn Kōwhai Points and get a gentle nudge to leave a Google review. Points work across every café in the network.",
+    description: "When a customer scans, they instantly earn Perky Points and get a gentle nudge to leave a Google review. Points work across every café in the network.",
     color: "bg-fern/10 text-fern",
     borderColor: "border-fern/20",
   },
@@ -135,7 +135,7 @@ export default function HowItWorks() {
             <div className="relative">
               <img
                 src={WHEEL_IMG}
-                alt="Kōwhai reward wheel"
+                alt="Perky reward wheel"
                 className="w-72 md:w-80 h-auto drop-shadow-2xl"
               />
               {/* Floating label */}

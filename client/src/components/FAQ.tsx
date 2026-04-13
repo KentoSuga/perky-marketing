@@ -12,16 +12,16 @@ import {
 
 const faqs = [
   {
-    q: "How much does Kōwhai cost?",
-    a: "Kōwhai is free to get started. We offer a generous free tier for small cafés, with premium plans for businesses that want advanced analytics, custom branding, and priority AI review responses. No hidden fees, no long-term contracts.",
+    q: "How much does Perky cost?",
+    a: "Perky is free to get started. We offer a generous free tier for small cafés, with premium plans for businesses that want advanced analytics, custom branding, and priority AI review responses. No hidden fees, no long-term contracts.",
   },
   {
     q: "Do my customers need to download an app?",
-    a: "No. Kōwhai is entirely web-based. Customers simply scan the QR code with their phone camera and everything works instantly in their browser. No app downloads, no sign-ups, no friction.",
+    a: "No. Perky is entirely web-based. Customers simply scan the QR code with their phone camera and everything works instantly in their browser. No app downloads, no sign-ups, no friction.",
   },
   {
     q: "How do cross-network points work?",
-    a: "When a customer earns Kōwhai Points at your café, those points go into their universal wallet. They can spend them at any café in the Kōwhai network. This means customers from other cafés discover yours, and your regulars explore the wider community. Everyone benefits.",
+    a: "When a customer earns Perky Points at your café, those points go into their universal wallet. They can spend them at any café in the Perky network. This means customers from other cafés discover yours, and your regulars explore the wider community. Everyone benefits.",
   },
   {
     q: "What kind of rewards can I offer?",
@@ -33,11 +33,11 @@ const faqs = [
   },
   {
     q: "Do I need to change my POS system?",
-    a: "Not at all. Kōwhai works completely independently of your POS. There's no integration required, no hardware to install, and no technical setup. Just print a QR code and place it on your counter.",
+    a: "Not at all. Perky works completely independently of your POS. There's no integration required, no hardware to install, and no technical setup. Just print a QR code and place it on your counter.",
   },
   {
-    q: "Is Kōwhai only for cafés in New Zealand and Australia?",
-    a: "Kōwhai is built for independent cafés and restaurants across New Zealand and Australia. We're expanding the network to support more local businesses in the ANZ region and beyond.",
+    q: "Is Perky only for cafés in New Zealand and Australia?",
+    a: "Perky is built for independent cafés and restaurants across New Zealand and Australia. We're expanding the network to support more local businesses in the ANZ region and beyond.",
   },
   {
     q: "How quickly will I see results?",

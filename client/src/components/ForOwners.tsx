@@ -38,7 +38,7 @@ export default function ForOwners() {
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-espresso/10">
               <img
                 src={COMMUNITY_IMG}
-                alt="Vibrant ANZ café street with Kōwhai trees"
+                alt="Vibrant ANZ café street with Perky trees"
                 className="w-full h-auto object-cover aspect-[16/10]"
               />
             </div>
@@ -78,7 +78,7 @@ export default function ForOwners() {
               <span className="text-kowhai-gold">Loyal Community</span>
             </h2>
             <p className="text-lg text-espresso-light/70 leading-relaxed mb-8" style={{ fontFamily: "var(--font-body)" }}>
-              Big chains have massive marketing budgets. You have something better — authentic connections with your community. Kōwhai amplifies that with smart technology that runs itself.
+              Big chains have massive marketing budgets. You have something better — authentic connections with your community. Perky amplifies that with smart technology that runs itself.
             </p>
 
             {/* Benefits list */}

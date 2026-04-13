@@ -35,12 +35,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <img src={LOGO_URL} alt="Kōwhai" className="w-8 h-8 opacity-80" />
+              <img src={LOGO_URL} alt="Perky" className="w-8 h-8 opacity-80" />
               <span
                 className="text-xl font-semibold text-oat tracking-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Kōwhai
+                Perky
               </span>
             </div>
             <p className="text-sm text-oat/40 leading-relaxed max-w-xs mb-5" style={{ fontFamily: "var(--font-body)" }}>
@@ -82,7 +82,7 @@ export default function Footer() {
         <div className="border-t border-oat/8 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-oat/25" style={{ fontFamily: "var(--font-body)" }}>
-              &copy; {new Date().getFullYear()} Kōwhai. All rights reserved.
+              &copy; {new Date().getFullYear()} Perky. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-xs text-oat/25 hover:text-oat/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>

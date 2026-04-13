@@ -9,7 +9,7 @@ const networkBenefits = [
   {
     icon: Coffee,
     title: "Earn Anywhere",
-    description: "Customers collect Kōwhai Points at every participating café. One wallet, one network.",
+    description: "Customers collect Perky Points at every participating café. One wallet, one network.",
   },
   {
     icon: ArrowLeftRight,
@@ -44,7 +44,7 @@ export default function NetworkExplainer() {
           className="text-center mb-16 md:mb-20"
         >
           <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>
-            The Kōwhai Network
+            The Perky Network
           </span>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl text-espresso leading-tight max-w-3xl mx-auto"
@@ -54,7 +54,7 @@ export default function NetworkExplainer() {
             <span className="text-kowhai-gold">Every Café Benefits.</span>
           </h2>
           <p className="mt-5 text-lg text-espresso-light/70 max-w-xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
-            Unlike isolated loyalty cards, Kōwhai Points work across every café in the network. Customers earn at one, spend at another — and everyone grows together.
+            Unlike isolated loyalty cards, Perky Points work across every café in the network. Customers earn at one, spend at another — and everyone grows together.
           </p>
         </motion.div>
 
@@ -70,9 +70,9 @@ export default function NetworkExplainer() {
             {/* Central hub */}
             <div className="flex flex-col items-center mb-10">
               <div className="w-20 h-20 rounded-full bg-kowhai-amber/15 flex items-center justify-center mb-3 border-2 border-kowhai-amber/20">
-                <span className="text-2xl font-bold text-kowhai-gold" style={{ fontFamily: "var(--font-display)" }}>K</span>
+                <span className="text-2xl font-bold text-kowhai-gold" style={{ fontFamily: "var(--font-display)" }}>P</span>
               </div>
-              <span className="text-sm font-semibold text-espresso" style={{ fontFamily: "var(--font-body)" }}>Kōwhai Network</span>
+              <span className="text-sm font-semibold text-espresso" style={{ fontFamily: "var(--font-body)" }}>Perky Network</span>
             </div>
 
             {/* Connected cafés */}

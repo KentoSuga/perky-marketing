@@ -1,6 +1,6 @@
 /*
  * Design: Golden Hour — Warm Organic Premium
- * Sticky navbar with warm cream background, Kōwhai logo, and amber CTA
+ * Sticky navbar with warm cream background, Perky logo, and amber CTA
  * Transparent on top, solid on scroll
  */
 import { useState, useEffect } from "react";
@@ -42,14 +42,14 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-1.5 group">
           <img
             src={LOGO_URL}
-            alt="Kōwhai"
+            alt="Perky"
             className="w-8 h-8 md:w-9 md:h-9 transition-transform duration-300 group-hover:scale-110"
           />
           <span
             className="text-xl md:text-2xl font-semibold tracking-tight text-espresso"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Kōwhai
+            Perky
           </span>
         </a>
 

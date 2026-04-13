@@ -56,7 +56,7 @@ export default function Hero() {
               className="text-lg md:text-xl text-espresso-light/80 max-w-lg leading-relaxed"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              One QR code on your counter. Customers earn points, leave Google reviews, and spin for rewards. AI handles the rest. Points work across every café in the Kōwhai network.
+              One QR code on your counter. Customers earn points, leave Google reviews, and spin for rewards. AI handles the rest. Points work across every café in the Perky network.
             </motion.p>
 
             {/* CTAs */}

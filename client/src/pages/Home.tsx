@@ -1,7 +1,7 @@
 /*
  * Design: Golden Hour — Warm Organic Premium
  * Home page: Assembles all sections in order
- * Kōwhai — AI-Powered Loyalty for NZ Independent Cafés
+ * Perky — AI-Powered Loyalty for NZ Independent Cafés
  */
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
