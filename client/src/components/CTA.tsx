@@ -5,17 +5,29 @@ const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663470458225/Hu3TK
 
 export default function CTA() {
   const [email, setEmail] = useState("");
-  const [plan, setPlan] = useState("starter");
+  const [plan, setPlan] = useState("Perky Starter - $100/month");
   const [notes, setNotes] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const planLabel = plan === "premium" ? "Perky Premium - $150/month" : "Perky Starter - $100/month";
-    const subject = encodeURIComponent(`New Sign-Up: ${planLabel}`);
-    const body = encodeURIComponent(
-      `Business Email: ${email}\nSelected Plan: ${planLabel}\n\nNotes:\n${notes || "(none)"}`
-    );
-    window.location.href = `mailto:support@perky-app.com?subject=${subject}&body=${body}`;
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, plan, notes }),
+      });
+      if (res.ok) {
+        setStatus("sent");
+        setEmail("");
+        setNotes("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -32,24 +44,40 @@ export default function CTA() {
             Ready to Build Your{" "}<span className="text-kowhai-amber">Loyal Community?</span>
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg text-oat/60 mb-10" style={{ fontFamily: "var(--font-body)" }}>Book a free trial now!</motion.p>
-          <motion.form initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-col gap-4 text-left" onSubmit={handleSubmit}>
-            <div>
-              <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Business Email</label>
-              <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@yourbusiness.com" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat placeholder:text-oat/30 focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all" style={{ fontFamily: "var(--font-body)" }} />
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Select Plan</label>
-              <select value={plan} onChange={(e) => setPlan(e.target.value)} className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all appearance-none" style={{ fontFamily: "var(--font-body)" }}>
-                <option value="starter" className="bg-espresso text-oat">Perky Starter - $100/month</option>
-                <option value="premium" className="bg-espresso text-oat">Perky Premium - $150/month</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Questions or Notes (Optional)</label>
-              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Tell us about your business..." rows={3} className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat placeholder:text-oat/30 focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all resize-none" style={{ fontFamily: "var(--font-body)" }} />
-            </div>
-            <button type="submit" className="w-full mt-2 px-8 py-4 rounded-full bg-kowhai-amber text-espresso font-semibold text-base hover:bg-kowhai-gold transition-all duration-300 hover:shadow-xl hover:shadow-kowhai-amber/25 hover:-translate-y-0.5" style={{ fontFamily: "var(--font-body)" }}>Get Started</button>
-          </motion.form>
+
+          {status === "sent" ? (
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-fern/20 border border-fern/30 rounded-2xl p-8 text-center">
+              <p className="text-xl font-semibold text-oat mb-2" style={{ fontFamily: "var(--font-display)" }}>Thank you!</p>
+              <p className="text-oat/60" style={{ fontFamily: "var(--font-body)" }}>We've received your request and will be in touch shortly at your email.</p>
+            </motion.div>
+          ) : (
+            <motion.form initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-col gap-4 text-left" onSubmit={handleSubmit}>
+              <div>
+                <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Business Email</label>
+                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@yourbusiness.com" className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat placeholder:text-oat/30 focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all" style={{ fontFamily: "var(--font-body)" }} />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Select Plan</label>
+                <select value={plan} onChange={(e) => setPlan(e.target.value)} className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all appearance-none" style={{ fontFamily: "var(--font-body)" }}>
+                  <option value="Perky Starter - $100/month" className="bg-espresso text-oat">Perky Starter - $100/month</option>
+                  <option value="Perky Premium - $150/month" className="bg-espresso text-oat">Perky Premium - $150/month</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Questions or Notes (Optional)</label>
+                <textarea value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Tell us about your business..." rows={3} className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat placeholder:text-oat/30 focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all resize-none" style={{ fontFamily: "var(--font-body)" }} />
+              </div>
+
+              {status === "error" && (
+                <p className="text-sm text-red-400" style={{ fontFamily: "var(--font-body)" }}>Something went wrong. Please try again or email us directly at support@perky-app.com</p>
+              )}
+
+              <button type="submit" disabled={status === "sending"} className="w-full mt-2 px-8 py-4 rounded-full bg-kowhai-amber text-espresso font-semibold text-base hover:bg-kowhai-gold transition-all duration-300 hover:shadow-xl hover:shadow-kowhai-amber/25 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed" style={{ fontFamily: "var(--font-body)" }}>
+                {status === "sending" ? "Sending..." : "Get Started"}
+              </button>
+            </motion.form>
+          )}
+
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }} className="mt-6 text-sm text-oat/35" style={{ fontFamily: "var(--font-body)" }}>We'll send a confirmation to your email · No credit card required</motion.p>
         </div>
       </div>
