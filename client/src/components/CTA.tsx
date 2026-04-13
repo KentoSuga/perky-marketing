@@ -13,7 +13,8 @@ export default function CTA() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const base = window.location.pathname.startsWith("/about") ? "/about" : "";
+      const res = await fetch(base + "/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, plan, notes }),
