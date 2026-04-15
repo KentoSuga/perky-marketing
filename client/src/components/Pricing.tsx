@@ -5,7 +5,7 @@ const plans = [
   {
     name: "Perky Starter",
     price: 50,
-    setup: 30,
+    setup: 20,
     description: "Everything you need to launch your loyalty program and start building your community.",
     features: ["Universal Points Network across ANZ", "Custom Reward Wheel with your prizes", "Owner Dashboard with real-time analytics", "Create Your Own Discounts & Offers", "Email support & onboarding"],
     highlighted: false,
@@ -13,7 +13,7 @@ const plans = [
   {
     name: "Perky Premium",
     price: 100,
-    setup: 30,
+    setup: 20,
     description: "Unlock advanced features including AI-powered social media content generation.",
     features: ["Everything in Starter, plus:", "Social Media Caption Generation", "AI-Generated Follow-Up Lists", "Priority support"],
     highlighted: true,
