@@ -4,7 +4,7 @@ import { Check, Sparkles } from "lucide-react";
 const plans = [
   {
     name: "Perky Starter",
-    price: 100,
+    price: 50,
     setup: 30,
     description: "Everything you need to launch your loyalty program and start building your community.",
     features: ["Universal Points Network across ANZ", "Custom Reward Wheel with your prizes", "Owner Dashboard with real-time analytics", "Create Your Own Discounts & Offers", "Email support & onboarding"],
@@ -12,7 +12,7 @@ const plans = [
   },
   {
     name: "Perky Premium",
-    price: 150,
+    price: 100,
     setup: 30,
     description: "Unlock advanced features including AI-powered social media content generation.",
     features: ["Everything in Starter, plus:", "Social Media Caption Generation", "AI-Generated Follow-Up Lists", "Priority support"],
