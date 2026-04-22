@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Sparkles, Clock } from "lucide-react";
+import { Check, Clock } from "lucide-react";
 
 type Plan = {
   name: string;
@@ -53,11 +53,6 @@ export default function Pricing() {
           {plans.map((plan, i) => (
             <motion.div key={plan.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }}
               className={`relative p-8 md:p-10 rounded-2xl border transition-all duration-500 ${plan.highlighted ? "bg-espresso text-oat border-espresso shadow-2xl shadow-espresso/15" : plan.comingSoon ? "bg-white/60 border-kowhai-amber/15 border-dashed" : "bg-white border-kowhai-amber/15 hover:shadow-lg hover:shadow-espresso/5"}`}>
-              {plan.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-kowhai-amber text-espresso text-xs font-semibold" style={{ fontFamily: "var(--font-body)" }}><Sparkles size={12} />Most Popular</span>
-                </div>
-              )}
               {plan.comingSoon && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-espresso text-oat text-xs font-semibold" style={{ fontFamily: "var(--font-body)" }}><Clock size={12} />Coming Soon</span>
