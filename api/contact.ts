@@ -29,8 +29,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       body: JSON.stringify({
         from: "Perky <noreply@perky-app.com>",
         to: "support@perky-app.com",
-        subject: `New Sign-Up: ${plan}`,
-        html: `<h2>New Perky Sign-Up</h2><p><strong>Business Email:</strong> ${email}</p><p><strong>Selected Plan:</strong> ${plan}</p><p><strong>Notes:</strong> ${notes || "(none)"}</p>`,
+        reply_to: email,
+        subject: `[Perky · Lead] ${plan} — ${email}`,
+        html: `<h2>New Perky Sign-Up</h2><p><strong>Business Email:</strong> ${email}</p><p><strong>Selected Plan:</strong> ${plan}</p><p><strong>Notes:</strong> ${notes || "(none)"}</p><!-- perky-form: lead -->`,
       }),
     });
 

@@ -8,13 +8,13 @@ import { Check, ArrowRight } from "lucide-react";
 const COMMUNITY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663470458225/Hu3TKythjyzGz5mGfi5V7t/cafe-community-QYAdgaLcMdv3W4YDEFmWrC.webp";
 
 const benefits = [
-  "More 5-star Google reviews on autopilot",
-  "AI responds to every review in your voice",
-  "Customers earn & spend points across all cafés",
-  "Custom discounts and rewards you control",
-  "Real-time dashboard with customer insights",
+  "More 5-star Google reviews, driven by the spin wheel",
+  "Customers return for stamps, not just the service",
+  "Custom discounts and rewards you fully control",
+  "Real-time dashboard with visits and customer trends",
   "Zero setup — just one QR code on your counter",
   "No POS integration or app downloads needed",
+  "AI-drafted follow-ups for lapsed customers",
   "Build a loyal local community effortlessly",
 ];
 
@@ -38,7 +38,7 @@ export default function ForOwners() {
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-espresso/10">
               <img
                 src={COMMUNITY_IMG}
-                alt="Vibrant ANZ café street with Perky trees"
+                alt="Vibrant ANZ main street of independent local businesses"
                 className="w-full h-auto object-cover aspect-[16/10]"
               />
             </div>
@@ -68,17 +68,17 @@ export default function ForOwners() {
             transition={{ duration: 0.7, delay: 0.15 }}
           >
             <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>
-              For Café Owners
+              For Local Business Owners
             </span>
             <h2
               className="text-3xl sm:text-4xl md:text-[2.75rem] text-espresso leading-tight mb-6"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Your Café Deserves a{" "}
+              Your Business Deserves a{" "}
               <span className="text-kowhai-gold">Loyal Community</span>
             </h2>
             <p className="text-lg text-espresso-light/70 leading-relaxed mb-8" style={{ fontFamily: "var(--font-body)" }}>
-              Big chains have massive marketing budgets. You have something better — authentic connections with your community. Perky amplifies that with smart technology that runs itself.
+              Big chains have massive marketing budgets. You have something better — authentic connections with your community. Whether you run a café, restaurant, barber shop, or salon, Perky amplifies that with smart technology that runs itself.
             </p>
 
             {/* Benefits list */}

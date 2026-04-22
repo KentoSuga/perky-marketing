@@ -35,7 +35,7 @@ export default function Hero() {
             className="mt-6 md:mt-8 text-lg md:text-xl text-espresso-light/80 max-w-xl leading-relaxed"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            One QR code on your counter. Customers earn points and spin for rewards. AI handles the rest. Points work across every business in the Perky network.
+            One QR code on your counter. Customers earn points, fill stamp cards, and spin for rewards — zero setup, no app downloads, no POS integration.
           </motion.p>
 
           <motion.div
@@ -49,7 +49,7 @@ export default function Hero() {
               className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-espresso text-oat font-semibold text-base hover:bg-espresso-light transition-all duration-300 hover:shadow-xl hover:shadow-espresso/15 hover:-translate-y-0.5"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Join the Network
+              Get Started Free
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a

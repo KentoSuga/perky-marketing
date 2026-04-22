@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-import { Network, Gift, BarChart3, Palette, Shield, Camera, UserCheck } from "lucide-react";
+import { Stamp, Gift, BarChart3, Palette, Shield, UserCheck } from "lucide-react";
 
 const features = [
-  { icon: Network, title: "Universal Points Network", description: "Customers earn at one business and spend at another. A shared loyalty network that benefits every independent business in the community.", color: "text-kowhai-gold", bg: "bg-kowhai-amber/8" },
-  { icon: Gift, title: "Custom Reward Wheel", description: "Set your own prizes — free coffees, discounts, pastries. The gamified spin wheel delights customers and drives repeat visits.", color: "text-terracotta", bg: "bg-terracotta/8" },
+  { icon: Stamp, title: "Custom Stamp Cards", description: "Every visit adds a stamp. Pick from five hand-crafted card designs that match your brand's feel — classic, espresso, mocha, oat, or paper. Fill the card, unlock a spin.", color: "text-kowhai-gold", bg: "bg-kowhai-amber/8" },
+  { icon: Gift, title: "Custom Reward Wheel", description: "Set your own prizes — free drinks, discounts, cuts, upgrades, merch. The gamified spin wheel delights customers and drives repeat visits.", color: "text-terracotta", bg: "bg-terracotta/8" },
   { icon: BarChart3, title: "Owner Dashboard", description: "Track visits, points redeemed, and customer trends. Real-time insights that help you understand your regulars better.", color: "text-kowhai-gold", bg: "bg-kowhai-amber/8" },
   { icon: Palette, title: "Create Your Own Discounts", description: "Full control over what rewards you offer. Set up custom discounts, seasonal specials, or loyalty milestones that fit your business.", color: "text-terracotta", bg: "bg-terracotta/8" },
   { icon: Shield, title: "Zero Setup Required", description: "No POS integration, no app downloads, no training. Print one QR code, put it on your counter, and you're live in minutes.", color: "text-fern", bg: "bg-fern/8" },
-  { icon: Camera, title: "Social Media Caption Generation", description: "Upload a photo and get AI-generated captions for social media instantly. Perfect for promoting your business and engaging your community online.", color: "text-kowhai-deep", bg: "bg-kowhai-deep/8" },
   { icon: UserCheck, title: "AI-Generated Follow-Up Lists", description: "AI automatically generates personalized follow-up lists for lapsed customers and regulars. You're in control — decide when and how to reach out with targeted campaigns.", color: "text-fern", bg: "bg-fern/8" },
 ];
 

@@ -5,7 +5,7 @@ const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663470458225/Hu3TK
 
 export default function CTA() {
   const [email, setEmail] = useState("");
-  const [plan, setPlan] = useState("Perky Starter - $100/month");
+  const [plan, setPlan] = useState("Perky Starter - $50/month");
   const [notes, setNotes] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -60,8 +60,7 @@ export default function CTA() {
               <div>
                 <label className="block text-xs font-medium text-oat/50 mb-1.5 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>Select Plan</label>
                 <select value={plan} onChange={(e) => setPlan(e.target.value)} className="w-full px-4 py-3 rounded-xl bg-white/10 border border-oat/15 text-oat focus:outline-none focus:border-kowhai-amber/50 focus:ring-1 focus:ring-kowhai-amber/30 transition-all appearance-none" style={{ fontFamily: "var(--font-body)" }}>
-                  <option value="Perky Starter - $100/month" className="bg-espresso text-oat">Perky Starter - $100/month</option>
-                  <option value="Perky Premium - $150/month" className="bg-espresso text-oat">Perky Premium - $150/month</option>
+                  <option value="Perky Starter - $50/month" className="bg-espresso text-oat">Perky Starter - $50/month</option>
                 </select>
               </div>
               <div>

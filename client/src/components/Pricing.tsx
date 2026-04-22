@@ -1,22 +1,40 @@
 import { motion } from "framer-motion";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, Clock } from "lucide-react";
 
-const plans = [
+type Plan = {
+  name: string;
+  price?: number;
+  setup?: number;
+  description: string;
+  features: string[];
+  highlighted: boolean;
+  comingSoon?: boolean;
+};
+
+const plans: Plan[] = [
   {
     name: "Perky Starter",
     price: 50,
     setup: 20,
     description: "Everything you need to launch your loyalty program and start building your community.",
-    features: ["Universal Points Network across ANZ", "Custom Reward Wheel with your prizes", "Owner Dashboard with real-time analytics", "Create Your Own Discounts & Offers", "Email support & onboarding"],
-    highlighted: false,
+    features: [
+      "1 week free trial",
+      "Digital membership cards (auto-issued via Google sign-in)",
+      "Custom Reward Wheel with your prizes",
+      "Custom Stamp Cards with 5 designs",
+      "Owner Dashboard with real-time analytics",
+      "Create Your Own Discounts & Offers",
+      "AI-Generated Follow-Up Lists",
+      "Email support & onboarding",
+    ],
+    highlighted: true,
   },
   {
     name: "Perky Premium",
-    price: 100,
-    setup: 20,
-    description: "Unlock advanced features including AI-powered social media content generation.",
-    features: ["Everything in Starter, plus:", "Social Media Caption Generation", "AI-Generated Follow-Up Lists", "Priority support"],
-    highlighted: true,
+    description: "Advanced AI features and priority support — on our roadmap.",
+    features: ["Everything in Starter, plus:", "Priority support", "More AI features in development"],
+    highlighted: false,
+    comingSoon: true,
   },
 ];
 
@@ -34,18 +52,31 @@ export default function Pricing() {
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div key={plan.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.12 }}
-              className={`relative p-8 md:p-10 rounded-2xl border transition-all duration-500 ${plan.highlighted ? "bg-espresso text-oat border-espresso shadow-2xl shadow-espresso/15" : "bg-white border-kowhai-amber/15 hover:shadow-lg hover:shadow-espresso/5"}`}>
+              className={`relative p-8 md:p-10 rounded-2xl border transition-all duration-500 ${plan.highlighted ? "bg-espresso text-oat border-espresso shadow-2xl shadow-espresso/15" : plan.comingSoon ? "bg-white/60 border-kowhai-amber/15 border-dashed" : "bg-white border-kowhai-amber/15 hover:shadow-lg hover:shadow-espresso/5"}`}>
               {plan.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-kowhai-amber text-espresso text-xs font-semibold" style={{ fontFamily: "var(--font-body)" }}><Sparkles size={12} />Most Popular</span>
                 </div>
               )}
+              {plan.comingSoon && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-espresso text-oat text-xs font-semibold" style={{ fontFamily: "var(--font-body)" }}><Clock size={12} />Coming Soon</span>
+                </div>
+              )}
               <h3 className={`text-xl font-semibold mb-2 ${plan.highlighted ? "text-oat" : "text-espresso"}`} style={{ fontFamily: "var(--font-display)" }}>{plan.name}</h3>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className={`text-4xl md:text-5xl font-bold ${plan.highlighted ? "text-kowhai-amber" : "text-espresso"}`} style={{ fontFamily: "var(--font-display)" }}>${plan.price}</span>
-                <span className={`text-sm ${plan.highlighted ? "text-oat/60" : "text-espresso-light/60"}`} style={{ fontFamily: "var(--font-body)" }}>/month</span>
-              </div>
-              <p className={`text-xs mb-4 ${plan.highlighted ? "text-oat/40" : "text-espresso-light/50"}`} style={{ fontFamily: "var(--font-body)" }}>+${plan.setup} one-time setup · First month ${plan.price + plan.setup} · Then ${plan.price}/month</p>
+              {plan.comingSoon ? (
+                <div className="mb-5">
+                  <span className="text-4xl md:text-5xl font-bold text-espresso-light/40" style={{ fontFamily: "var(--font-display)" }}>—</span>
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-baseline gap-1 mb-1">
+                    <span className={`text-4xl md:text-5xl font-bold ${plan.highlighted ? "text-kowhai-amber" : "text-espresso"}`} style={{ fontFamily: "var(--font-display)" }}>${plan.price}</span>
+                    <span className={`text-sm ${plan.highlighted ? "text-oat/60" : "text-espresso-light/60"}`} style={{ fontFamily: "var(--font-body)" }}>/month</span>
+                  </div>
+                  <p className={`text-xs mb-4 ${plan.highlighted ? "text-oat/40" : "text-espresso-light/50"}`} style={{ fontFamily: "var(--font-body)" }}>+${plan.setup} one-time setup · First month ${(plan.price ?? 0) + (plan.setup ?? 0)} · Then ${plan.price}/month</p>
+                </>
+              )}
               <p className={`text-sm leading-relaxed mb-6 ${plan.highlighted ? "text-oat/70" : "text-espresso-light/70"}`} style={{ fontFamily: "var(--font-body)" }}>{plan.description}</p>
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
@@ -55,7 +86,11 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#get-started" className={`block w-full text-center px-6 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 ${plan.highlighted ? "bg-kowhai-amber text-espresso hover:bg-kowhai-gold hover:shadow-xl hover:shadow-kowhai-amber/25" : "bg-espresso text-oat hover:bg-espresso-light hover:shadow-lg hover:shadow-espresso/15"}`} style={{ fontFamily: "var(--font-body)" }}>Get Started</a>
+              {plan.comingSoon ? (
+                <div className="block w-full text-center px-6 py-3.5 rounded-full font-semibold text-sm bg-oat text-espresso-light/60 cursor-not-allowed" style={{ fontFamily: "var(--font-body)" }}>Coming Soon</div>
+              ) : (
+                <a href="#get-started" className={`block w-full text-center px-6 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 ${plan.highlighted ? "bg-kowhai-amber text-espresso hover:bg-kowhai-gold hover:shadow-xl hover:shadow-kowhai-amber/25" : "bg-espresso text-oat hover:bg-espresso-light hover:shadow-lg hover:shadow-espresso/15"}`} style={{ fontFamily: "var(--font-body)" }}>Get Started</a>
+              )}
             </motion.div>
           ))}
         </div>

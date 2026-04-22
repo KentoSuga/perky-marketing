@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "How much does Perky cost?", a: "Perky starts at $100/month for our Starter plan, with a one-time $30 setup fee. Our Premium plan is $150/month and includes AI-powered social media content generation and follow-up lists. No hidden fees, no long-term contracts." },
+  { q: "How much does Perky cost?", a: "Perky is $50/month, with a one-time $20 setup fee. That includes everything — stamp cards, the reward wheel, owner dashboard, and AI-generated follow-up lists. No hidden fees, no long-term contracts." },
   { q: "Do my customers need to download an app?", a: "No. Perky is entirely web-based. Customers simply scan the QR code with their phone camera and everything works instantly in their browser. No app downloads, no sign-ups, no friction." },
-  { q: "How do cross-network points work?", a: "When a customer earns Perky Points at your business, those points go into their universal wallet. They can spend them at any business in the Perky network. This means customers from other businesses discover yours, and your regulars explore the wider community. Everyone benefits." },
-  { q: "What kind of rewards can I offer?", a: "Anything you like! Free coffees, percentage discounts, free pastries, buy-one-get-one deals, seasonal specials — you have full control. Set up rewards in your dashboard and they instantly appear on the reward wheel for your customers." },
+  { q: "Do customers have to sign up before they can earn points?", a: "Just one tap. Customers sign in with Google on their first scan — their digital membership card is issued automatically. No forms, no passwords, no wasted counter time." },
+  { q: "What kind of rewards can I offer?", a: "Anything you like. Free drinks, percentage discounts, free upgrades, buy-one-get-one deals, add-on services, seasonal specials — you have full control. Whether you're a café, restaurant, barber, or salon, set up rewards in your dashboard and they instantly appear on the reward wheel for your customers." },
   { q: "Do I need to change my POS system?", a: "Not at all. Perky works completely independently of your POS. There's no integration required, no hardware to install, and no technical setup. Just print a QR code and place it on your counter." },
-  { q: "Is Perky available worldwide?", a: "Perky is currently built for businesses across New Zealand and Australia. We're expanding the network to support more local businesses worldwide." },
-  { q: "How quickly will I see results?", a: "Most businesses see a noticeable increase in repeat visits within the first two weeks. The loyalty programme builds momentum over the first month as regulars start accumulating points. By month two, you'll typically see a measurable increase in repeat visits." },
+  { q: "Is Perky available worldwide?", a: "Perky is currently built for businesses across New Zealand and Australia. We're expanding to support more local businesses worldwide." },
+  { q: "How quickly will I see results?", a: "Most businesses start noticing more repeat visits within the first month as regulars begin filling their stamp cards and chasing spin-wheel rewards. The loyalty programme builds momentum over the first few months." },
 ];
 
 export default function FAQ() {
