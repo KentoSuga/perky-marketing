@@ -59,6 +59,16 @@ export default function Hero() {
             >
               See How It Works
             </a>
+            <a
+              href="https://perky-app.com/visit/demo/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-espresso-light/80 font-semibold text-base hover:text-espresso hover:bg-kowhai-amber/5 transition-all duration-300"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Try the live demo
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
           </motion.div>
         </div>
       </div>
