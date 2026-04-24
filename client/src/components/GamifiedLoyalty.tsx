@@ -35,7 +35,7 @@ export default function GamifiedLoyalty() {
               Make Loyalty{" "}<span className="text-kowhai-gold">Fun & Rewarding</span>
             </h2>
             <p className="text-lg text-espresso-light/70 leading-relaxed mb-8" style={{ fontFamily: "var(--font-body)" }}>
-              Every scan is a chance to win. Customers spin the reward wheel and instantly discover what they've earned — a free item, a discount, an upgrade, or bonus points. The anticipation keeps them coming back.
+              Every full stamp card is a chance to win. Customers spin the reward wheel and instantly discover what they've earned — a free item, a discount, or an upgrade. The anticipation keeps them coming back.
             </p>
             <div className="flex flex-col gap-3 mb-8">
               {bullets.map((bullet, i) => (

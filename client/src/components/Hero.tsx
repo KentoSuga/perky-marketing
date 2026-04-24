@@ -35,7 +35,7 @@ export default function Hero() {
             className="mt-6 md:mt-8 text-lg md:text-xl text-espresso-light/80 max-w-xl leading-relaxed"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            One QR code on your counter. Customers earn points, fill stamp cards, and spin for rewards — zero setup, no app downloads, no POS integration.
+            One QR code on your counter. Customers fill stamp cards and spin for rewards — zero setup, no app downloads, no POS integration.
           </motion.p>
 
           <motion.div

@@ -15,7 +15,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "The cross-network points are genius. Customers from the café down the road now come to us too. It's not competition — it's community. Our repeat visits are up 40%.",
+    quote: "The Perky network is genius. Customers using the app at the café down the road discover us through their wallet and come in. It's not competition — it's community. Our repeat visits are up 40%.",
     name: "James Tūhoe",
     role: "Owner, Kōwhai Corner Café",
     location: "Auckland",

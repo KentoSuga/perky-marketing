@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { QrCode, Star, Gift, Heart } from "lucide-react";
+import { QrCode, IdCard, Gift, Stamp } from "lucide-react";
 
 const steps = [
   {
@@ -12,25 +12,25 @@ const steps = [
   },
   {
     num: "02",
-    icon: Star,
-    title: "Customers Scan & Earn",
-    description: "When a customer scans, they instantly earn Perky Points and a digital membership card for your business. One-tap Google sign-in — no app download, no sign-up friction.",
+    icon: IdCard,
+    title: "Automatic Digital Membership Card",
+    description: "When a customer scans, they get a digital membership card for your business instantly. One-tap Google sign-in — no app download, no sign-up friction.",
     color: "bg-fern/10 text-fern",
     borderColor: "border-fern/20",
   },
   {
     num: "03",
     icon: Gift,
-    title: "Spin the Reward Wheel",
-    description: "After scanning, customers spin a beautiful reward wheel to win prizes you've set — a free drink, 10% off, a free upgrade. Instant gratification that brings them back.",
+    title: "First Spin After a Google Review",
+    description: "On their very first scan, customers leave a Google review and unlock a free spin on the reward wheel — winning prizes you've set, like a free drink, 10% off, or an upgrade. The review lifts your rating; the spin brings them back.",
     color: "bg-terracotta/10 text-terracotta",
     borderColor: "border-terracotta/20",
   },
   {
     num: "04",
-    icon: Heart,
-    title: "Rewards & Loyalty",
-    description: "Customers spin a beautiful reward wheel to win prizes you've set. Build genuine loyalty with instant gratification and repeat visits that keep your community coming back.",
+    icon: Stamp,
+    title: "Fill the Card, Spin Again",
+    description: "Every visit after the first adds a stamp to their card. Fill the card and they earn another spin. Repeat visits become a game your customers actually want to play.",
     color: "bg-kowhai-deep/10 text-kowhai-deep",
     borderColor: "border-kowhai-deep/20",
   },

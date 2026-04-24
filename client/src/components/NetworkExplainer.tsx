@@ -1,30 +1,31 @@
 /*
  * Design: Golden Hour — Warm Organic Premium
- * Network Explainer: Visual showing how points flow across cafés
+ * Network Explainer: One app, many local businesses. One wallet holding
+ * every stamp card and reward the customer has across the network.
  */
 import { motion } from "framer-motion";
-import { Coffee, ArrowLeftRight, Users, TrendingUp } from "lucide-react";
+import { Wallet, Compass, Users, TrendingUp, Store } from "lucide-react";
 
 const networkBenefits = [
   {
-    icon: Coffee,
-    title: "Earn Anywhere",
-    description: "Customers collect Perky Points at every participating café. One wallet, one network.",
+    icon: Wallet,
+    title: "One Wallet",
+    description: "Every stamp card and reward a customer earns — across every Perky business they visit — lives in one wallet. No juggling paper cards or separate apps.",
   },
   {
-    icon: ArrowLeftRight,
-    title: "Spend Anywhere",
-    description: "Points earned at Café A can be redeemed at Café B. The network drives cross-discovery.",
+    icon: Compass,
+    title: "Discover New Locals",
+    description: "When a customer signs up at your place, they can browse other independent businesses in the network right from their wallet. More eyes on every venue.",
   },
   {
     icon: Users,
     title: "Shared Community",
-    description: "New customers find your café through the network. Other cafés' regulars become yours too.",
+    description: "New customers find your business through the network. Other owners' regulars discover you the next time they're in your area.",
   },
   {
     icon: TrendingUp,
     title: "Everyone Grows",
-    description: "More cafés in the network means more customers for everyone. A rising tide lifts all boats.",
+    description: "More businesses in the network means more customers for everyone. A rising tide lifts all boats.",
   },
 ];
 
@@ -54,7 +55,7 @@ export default function NetworkExplainer() {
             <span className="text-kowhai-gold">Every Café Benefits.</span>
           </h2>
           <p className="mt-5 text-lg text-espresso-light/70 max-w-xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
-            Unlike isolated loyalty cards, Perky Points work across every café in the network. Customers earn at one, spend at another — and everyone grows together.
+            Unlike isolated paper loyalty cards, Perky gives your customers one app for every local business they love. One sign-in, one wallet, every stamp card and reward in one place.
           </p>
         </motion.div>
 
@@ -87,7 +88,7 @@ export default function NetworkExplainer() {
                   className="flex flex-col items-center"
                 >
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-white shadow-md shadow-espresso/5 flex items-center justify-center mb-2 border border-kowhai-amber/10">
-                    <Coffee size={22} className="text-espresso-light/50" />
+                    <Store size={22} className="text-espresso-light/50" />
                   </div>
                   <span className="text-xs text-center text-espresso-light/60 leading-tight" style={{ fontFamily: "var(--font-body)" }}>
                     {name}
