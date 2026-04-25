@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Problems from "@/components/Problems";
 import HowItWorks from "@/components/HowItWorks";
 import GamifiedLoyalty from "@/components/GamifiedLoyalty";
+import LiveDemoStrip from "@/components/LiveDemoStrip";
 import Features from "@/components/Features";
 import ForOwners from "@/components/ForOwners";
 import Pricing from "@/components/Pricing";
@@ -19,6 +20,7 @@ export default function Home() {
         <Problems />
         <HowItWorks />
         <GamifiedLoyalty />
+        <LiveDemoStrip />
         <Features />
         <ForOwners />
         <Pricing />
