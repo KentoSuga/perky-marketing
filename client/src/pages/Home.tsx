@@ -5,6 +5,7 @@ import HowItWorks from "@/components/HowItWorks";
 import GamifiedLoyalty from "@/components/GamifiedLoyalty";
 import LiveDemoStrip from "@/components/LiveDemoStrip";
 import Features from "@/components/Features";
+import Infographic from "@/components/Infographic";
 import ForOwners from "@/components/ForOwners";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -22,6 +23,7 @@ export default function Home() {
         <GamifiedLoyalty />
         <LiveDemoStrip />
         <Features />
+        <Infographic />
         <ForOwners />
         <Pricing />
         <FAQ />
