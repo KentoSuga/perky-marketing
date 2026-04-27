@@ -29,7 +29,7 @@ export default function Infographic() {
           className="max-w-6xl mx-auto"
         >
           <img
-            src={`${import.meta.env.BASE_URL}process-grid.png`}
+            src="https://perky-marketing.vercel.app/process-grid.png"
             alt="Six-step Perky process: scan to start, review and spin, auto-enroll, grow your reach, collect stamps, more regulars"
             className="w-full h-auto block"
           />
