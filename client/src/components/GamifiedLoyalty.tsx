@@ -23,7 +23,7 @@ export default function GamifiedLoyalty() {
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="flex items-center justify-center">
             <div className="relative">
               <img
-                src="https://perky-marketing.vercel.app/loyalty-scene.png"
+                src="/loyalty-scene.png"
                 alt="Perky spin wheel on a phone beside a QR code table stand at a café"
                 className="w-full max-w-2xl h-auto drop-shadow-2xl rounded-2xl"
               />
