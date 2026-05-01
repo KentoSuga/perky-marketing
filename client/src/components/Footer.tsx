@@ -1,5 +1,3 @@
-import { MapPin } from "lucide-react";
-
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663470458225/Hu3TKythjyzGz5mGfi5V7t/kowhai-logo-DrmVLuMRivXGz6CoyCvkXM.webp";
 
 const footerLinks = {
@@ -25,7 +23,6 @@ export default function Footer() {
               <span className="text-xl font-semibold text-oat tracking-tight" style={{ fontFamily: "var(--font-display)" }}>Perky</span>
             </div>
             <p className="text-sm text-oat/40 leading-relaxed max-w-xs mb-5" style={{ fontFamily: "var(--font-body)" }}>AI-powered loyalty platform for businesses worldwide. More regulars, zero effort.</p>
-            <div className="flex items-center gap-2 text-xs text-oat/30" style={{ fontFamily: "var(--font-body)" }}><MapPin size={14} /><span>Made with aroha in Aotearoa, New Zealand</span></div>
           </div>
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
