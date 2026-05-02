@@ -11,7 +11,7 @@ export const en = {
     titleA: "More Reviews.",
     titleB: "More Regulars.",
     titleC: "Zero Effort.",
-    subhead: "Customers scan, earn stamps, spin for rewards, and leave Google reviews — all in 60 seconds. Zero setup. No app downloads. No POS integration. Simply stick the QR code on your counter.",
+    subhead: "A gamified loyalty platform that drives Google reviews, turns first-time visitors into regulars, and brings lapsed customers back.",
     ctaPrimary: "Get Started Free",
     ctaSecondary: "See How It Works",
   },
@@ -20,6 +20,7 @@ export const en = {
     titleA: "The Challenges",
     titleB: "Every Independent Business",
     titleC: "Faces",
+    subhead: "The hardest part isn’t delivering great service — it’s getting customers to come back and tell others.",
     items: [
       {
         title: "Google reviews aren't growing",
@@ -229,7 +230,7 @@ export const zh: Messages = {
     titleA: "更多好评。",
     titleB: "更多回头客。",
     titleC: "毫不费力。",
-    subhead: "顾客扫码、集印章、转盘抽奖、留下Google好评——全部在60秒内完成。零设置、无需下载App、不用对接POS，只需把二维码贴在柜台上。",
+    subhead: "游戏化的会员忠诚度平台——助您获取更多Google好评，把首次到店的客人变成回头客，并唤回流失的老顾客。",
     ctaPrimary: "免费开始",
     ctaSecondary: "了解运作方式",
   },
@@ -238,6 +239,7 @@ export const zh: Messages = {
     titleA: "每一家",
     titleB: "独立小店",
     titleC: "都会遇到的挑战",
+    subhead: "最难的不是把服务做好——而是让顾客一次次回头，并把您推荐给身边的人。",
     items: [
       {
         title: "Google好评迟迟不增长",

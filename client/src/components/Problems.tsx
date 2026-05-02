@@ -38,6 +38,12 @@ export default function Problems() {
             <span className="text-kowhai-gold">{t.problems.titleB}</span>{" "}
             {t.problems.titleC}
           </h2>
+          <p
+            className="mt-5 text-lg text-espresso-light/70 max-w-xl mx-auto"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            {t.problems.subhead}
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
