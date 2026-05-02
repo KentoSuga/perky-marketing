@@ -1,50 +1,26 @@
 import { motion } from "framer-motion";
 import { QrCode, IdCard, Gift, Stamp } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
-const steps = [
-  {
-    num: "01",
-    icon: QrCode,
-    title: "Print One QR Code",
-    description: "Place a single Perky QR code on your counter. That's the only setup you'll ever need. No app downloads, no complicated POS integrations.",
-    color: "bg-kowhai-amber/10 text-kowhai-gold",
-    borderColor: "border-kowhai-amber/20",
-  },
-  {
-    num: "02",
-    icon: IdCard,
-    title: "Automatic Digital Membership Card",
-    description: "When a customer scans, they get a digital membership card for your business instantly. One-tap Google sign-in — no app download, no sign-up friction.",
-    color: "bg-fern/10 text-fern",
-    borderColor: "border-fern/20",
-  },
-  {
-    num: "03",
-    icon: Gift,
-    title: "First Spin After a Google Review",
-    description: "On their very first scan, customers leave a Google review and unlock a free spin on the reward wheel — winning prizes you've set, like a free drink, 10% off, or an upgrade. The review lifts your rating; the spin brings them back.",
-    color: "bg-terracotta/10 text-terracotta",
-    borderColor: "border-terracotta/20",
-  },
-  {
-    num: "04",
-    icon: Stamp,
-    title: "Fill the Card, Spin Again",
-    description: "Every visit after the first adds a stamp to their card. Fill the card and they earn another spin. Repeat visits become a game your customers actually want to play.",
-    color: "bg-kowhai-deep/10 text-kowhai-deep",
-    borderColor: "border-kowhai-deep/20",
-  },
+const visuals = [
+  { num: "01", icon: QrCode, color: "bg-kowhai-amber/10 text-kowhai-gold", borderColor: "border-kowhai-amber/20" },
+  { num: "02", icon: IdCard, color: "bg-fern/10 text-fern", borderColor: "border-fern/20" },
+  { num: "03", icon: Gift, color: "bg-terracotta/10 text-terracotta", borderColor: "border-terracotta/20" },
+  { num: "04", icon: Stamp, color: "bg-kowhai-deep/10 text-kowhai-deep", borderColor: "border-kowhai-deep/20" },
 ];
 
 export default function HowItWorks() {
+  const { t } = useI18n();
+  const steps = t.howItWorks.items.map((item, i) => ({ ...item, ...visuals[i] }));
+
   return (
     <section id="how-it-works" className="relative py-20 md:py-28 bg-oat overflow-hidden">
       <div className="absolute top-0 right-[-10%] w-[500px] h-[500px] rounded-full bg-kowhai-amber/[0.04] blur-3xl" />
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16 md:mb-20">
-          <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>How It Works</span>
+          <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>{t.howItWorks.eyebrow}</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl text-espresso leading-tight max-w-2xl mx-auto" style={{ fontFamily: "var(--font-display)" }}>
-            From QR Code to{" "}<span className="text-kowhai-gold">Loyal Community</span>{" "}in Four Steps
+            {t.howItWorks.titleA}{" "}<span className="text-kowhai-gold">{t.howItWorks.titleB}</span>{" "}{t.howItWorks.titleC}
           </h2>
         </motion.div>
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">

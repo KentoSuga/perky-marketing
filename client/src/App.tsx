@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch, Router as WouterRouter } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { I18nProvider } from "./i18n/I18nProvider";
 import Home from "./pages/Home";
 import Terms from "./pages/Terms";
 
@@ -22,12 +23,14 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Toaster />
-          <WouterRouter base={window.location.pathname.startsWith("/about") ? "/about" : ""}>
-            <Router />
-          </WouterRouter>
-        </TooltipProvider>
+        <I18nProvider>
+          <TooltipProvider>
+            <Toaster />
+            <WouterRouter base={window.location.pathname.startsWith("/about") ? "/about" : ""}>
+              <Router />
+            </WouterRouter>
+          </TooltipProvider>
+        </I18nProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

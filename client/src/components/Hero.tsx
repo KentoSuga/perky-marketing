@@ -4,8 +4,10 @@
  */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function Hero() {
+  const { t } = useI18n();
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20 md:pt-0">
       {/* Warm gradient background */}
@@ -23,19 +25,19 @@ export default function Hero() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.08] tracking-tight text-espresso"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            More Reviews.{" "}
-            <span className="text-kowhai-gold">More Regulars.</span>{" "}
-            Zero Effort.
+            {t.hero.titleA}{" "}
+            <span className="text-kowhai-gold">{t.hero.titleB}</span>{" "}
+            {t.hero.titleC}
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-6 md:mt-8 text-lg md:text-xl text-espresso-light/80 max-w-xl leading-relaxed"
+            className="mt-6 md:mt-8 text-lg md:text-xl text-espresso-light/80 max-w-3xl leading-relaxed"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            One QR code on your counter. Customers fill stamp cards and spin for rewards — zero setup, no app downloads, no POS integration.
+            {t.hero.subhead}
           </motion.p>
 
           <motion.div
@@ -49,7 +51,7 @@ export default function Hero() {
               className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-espresso text-oat font-semibold text-base hover:bg-espresso-light transition-all duration-300 hover:shadow-xl hover:shadow-espresso/15 hover:-translate-y-0.5"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Get Started Free
+              {t.hero.ctaPrimary}
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
@@ -57,7 +59,7 @@ export default function Hero() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-espresso/15 text-espresso font-semibold text-base hover:border-kowhai-amber hover:bg-kowhai-amber/5 transition-all duration-300"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              See How It Works
+              {t.hero.ctaSecondary}
             </a>
           </motion.div>
         </div>

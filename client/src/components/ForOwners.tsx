@@ -4,21 +4,12 @@
  */
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const COMMUNITY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663470458225/Hu3TKythjyzGz5mGfi5V7t/cafe-community-QYAdgaLcMdv3W4YDEFmWrC.webp";
 
-const benefits = [
-  "More 5-star Google reviews, driven by the spin wheel",
-  "Customers return for stamps, not just the service",
-  "Custom discounts and rewards you fully control",
-  "Real-time dashboard with visits and customer trends",
-  "Zero setup — just one QR code on your counter",
-  "No POS integration or app downloads needed",
-  "AI-drafted follow-ups for lapsed customers",
-  "Build a loyal local community effortlessly",
-];
-
 export default function ForOwners() {
+  const { t } = useI18n();
   return (
     <section id="for-owners" className="relative py-20 md:py-28 bg-oat overflow-hidden">
       {/* Organic blobs */}
@@ -38,7 +29,7 @@ export default function ForOwners() {
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-espresso/10">
               <img
                 src={COMMUNITY_IMG}
-                alt="Vibrant ANZ main street of independent local businesses"
+                alt={t.forOwners.imgAlt}
                 className="w-full h-auto object-cover aspect-[16/10]"
               />
             </div>
@@ -49,13 +40,13 @@ export default function ForOwners() {
               className="absolute -bottom-6 -right-4 md:-right-8 bg-white rounded-xl p-5 shadow-xl shadow-espresso/8 border border-kowhai-amber/10 max-w-[220px]"
             >
               <div className="text-xs font-semibold uppercase tracking-wider text-fern mb-2" style={{ fontFamily: "var(--font-body)" }}>
-                This Month
+                {t.forOwners.floatingCardLabel}
               </div>
               <div className="text-3xl font-bold text-espresso mb-1" style={{ fontFamily: "var(--font-display)" }}>
                 +47
               </div>
               <div className="text-sm text-espresso-light/60" style={{ fontFamily: "var(--font-body)" }}>
-                new Google reviews
+                {t.forOwners.floatingCardSub}
               </div>
             </motion.div>
           </motion.div>
@@ -68,22 +59,22 @@ export default function ForOwners() {
             transition={{ duration: 0.7, delay: 0.15 }}
           >
             <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>
-              For Local Business Owners
+              {t.forOwners.eyebrow}
             </span>
             <h2
               className="text-3xl sm:text-4xl md:text-[2.75rem] text-espresso leading-tight mb-6"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Your Business Deserves a{" "}
-              <span className="text-kowhai-gold">Loyal Community</span>
+              {t.forOwners.titleA}{" "}
+              <span className="text-kowhai-gold">{t.forOwners.titleB}</span>
             </h2>
             <p className="text-lg text-espresso-light/70 leading-relaxed mb-8" style={{ fontFamily: "var(--font-body)" }}>
-              Big chains have massive marketing budgets. You have something better — authentic connections with your community. Whether you run a café, restaurant, barber shop, or salon, Perky amplifies that with smart technology that runs itself.
+              {t.forOwners.body}
             </p>
 
             {/* Benefits list */}
             <div className="grid sm:grid-cols-2 gap-3 mb-8">
-              {benefits.map((benefit, i) => (
+              {t.forOwners.benefits.map((benefit, i) => (
                 <motion.div
                   key={benefit}
                   initial={{ opacity: 0, x: 10 }}
@@ -107,7 +98,7 @@ export default function ForOwners() {
               className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-espresso text-oat font-semibold text-base hover:bg-espresso-light transition-all duration-300 hover:shadow-xl hover:shadow-espresso/15 hover:-translate-y-0.5"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Start Growing Your Reviews
+              {t.forOwners.cta}
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </motion.div>

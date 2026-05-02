@@ -1,42 +1,18 @@
 import { motion } from "framer-motion";
 import { Star, UserMinus, EyeOff, Wallet } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
-const problems = [
-  {
-    icon: Star,
-    title: "Google reviews aren't growing",
-    description: "You do great work — coffee, cuts, plates, service — but barely anyone leaves a Google review. Your rating stalls while new customers keep walking past to the chain down the road.",
-    color: "text-kowhai-gold",
-    bg: "bg-kowhai-amber/10",
-    border: "border-kowhai-amber/20",
-  },
-  {
-    icon: UserMinus,
-    title: "First-time visitors don't come back",
-    description: "Someone pops in once, you never see them again. Without a reason to return, every visit is a one-off — and every new regular is pure luck.",
-    color: "text-terracotta",
-    bg: "bg-terracotta/10",
-    border: "border-terracotta/20",
-  },
-  {
-    icon: EyeOff,
-    title: "No visibility into your customers",
-    description: "You recognise the morning faces, but you don't actually know who your regulars are, how often they visit, or how to reach them when it matters.",
-    color: "text-fern",
-    bg: "bg-fern/10",
-    border: "border-fern/20",
-  },
-  {
-    icon: Wallet,
-    title: "Can't justify big marketing spend",
-    description: "Every dollar counts. Paid ads and loyalty platforms designed for chains feel bloated, expensive, and built for someone else's business.",
-    color: "text-kowhai-deep",
-    bg: "bg-kowhai-deep/10",
-    border: "border-kowhai-deep/20",
-  },
+const visuals = [
+  { icon: Star, color: "text-kowhai-gold", bg: "bg-kowhai-amber/10", border: "border-kowhai-amber/20" },
+  { icon: UserMinus, color: "text-terracotta", bg: "bg-terracotta/10", border: "border-terracotta/20" },
+  { icon: EyeOff, color: "text-fern", bg: "bg-fern/10", border: "border-fern/20" },
+  { icon: Wallet, color: "text-kowhai-deep", bg: "bg-kowhai-deep/10", border: "border-kowhai-deep/20" },
 ];
 
 export default function Problems() {
+  const { t } = useI18n();
+  const problems = t.problems.items.map((item, i) => ({ ...item, ...visuals[i] }));
+
   return (
     <section id="problems" className="relative py-20 md:py-28 bg-white overflow-hidden">
       <div className="absolute top-10 right-[-10%] w-[500px] h-[500px] rounded-full bg-terracotta/[0.04] blur-3xl" />
@@ -52,22 +28,16 @@ export default function Problems() {
             className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            The Problem
+            {t.problems.eyebrow}
           </span>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl text-espresso leading-tight max-w-3xl mx-auto"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            The Challenges{" "}
-            <span className="text-kowhai-gold">Every Independent Business</span>{" "}
-            Faces
+            {t.problems.titleA}{" "}
+            <span className="text-kowhai-gold">{t.problems.titleB}</span>{" "}
+            {t.problems.titleC}
           </h2>
-          <p
-            className="mt-5 text-lg text-espresso-light/70 max-w-xl mx-auto"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Whether you run a café, restaurant, barber shop, or salon — you're up against chains with huge budgets. Perky is built to level the playing field.
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">

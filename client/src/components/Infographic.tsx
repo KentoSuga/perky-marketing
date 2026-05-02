@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Gift } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function Infographic() {
+  const { t } = useI18n();
   return (
     <section className="relative py-12 md:py-20 bg-oat overflow-hidden">
       <div className="container">
@@ -16,8 +18,8 @@ export default function Infographic() {
             className="text-3xl sm:text-4xl md:text-5xl text-espresso leading-tight max-w-3xl mx-auto"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            <span className="text-kowhai-gold">How it works:</span>{" "}
-            From Scan to Loyal Community in 6 simple steps.
+            <span className="text-kowhai-gold">{t.infographic.titleA}</span>{" "}
+            {t.infographic.titleB}
           </h2>
         </motion.div>
 
@@ -30,7 +32,7 @@ export default function Infographic() {
         >
           <img
             src="https://perky-marketing.vercel.app/process-grid.png"
-            alt="Six-step Perky process: scan to start, review and spin, auto-enroll, grow your reach, collect stamps, more regulars"
+            alt={t.infographic.imgAlt}
             className="w-full h-auto block"
           />
         </motion.div>
@@ -48,8 +50,8 @@ export default function Infographic() {
               className="text-sm md:text-base text-espresso-light/80"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Happy customers, More reviews. More customers.{" "}
-              <span className="text-kowhai-gold font-semibold">All from one simple QR code scan.</span>
+              {t.infographic.calloutA}{" "}
+              <span className="text-kowhai-gold font-semibold">{t.infographic.calloutB}</span>
             </p>
           </div>
         </motion.div>

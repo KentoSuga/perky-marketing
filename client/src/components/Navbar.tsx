@@ -6,19 +6,22 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663470458225/Hu3TKythjyzGz5mGfi5V7t/kowhai-logo-DrmVLuMRivXGz6CoyCvkXM.webp";
 
-const navLinks = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
-];
-
 export default function Navbar() {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { label: t.nav.howItWorks, href: "#how-it-works" },
+    { label: t.nav.features, href: "#features" },
+    { label: t.nav.pricing, href: "#pricing" },
+    { label: t.nav.faq, href: "#faq" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -67,19 +70,20 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA + Mobile Toggle */}
+        {/* CTA + Language + Mobile Toggle */}
         <div className="flex items-center gap-3">
+          <LanguageSwitcher />
           <a
             href="#get-started"
             className="hidden md:inline-flex items-center px-6 py-2.5 rounded-full bg-espresso text-oat text-sm font-semibold hover:bg-espresso-light transition-all duration-300 hover:shadow-lg hover:shadow-kowhai-amber/20 hover:-translate-y-0.5"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Get Started Free
+            {t.nav.getStarted}
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden p-2 text-espresso"
-            aria-label="Toggle menu"
+            aria-label={t.nav.toggleMenu}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -114,7 +118,7 @@ export default function Navbar() {
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-espresso text-oat text-sm font-semibold mt-2"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Get Started Free
+                {t.nav.getStarted}
               </a>
             </div>
           </motion.div>

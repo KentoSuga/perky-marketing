@@ -1,26 +1,30 @@
 import { motion } from "framer-motion";
 import { Stamp, Gift, BarChart3, Palette, Shield, UserCheck } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
-const features = [
-  { icon: Stamp, title: "Custom Stamp Cards", description: "Every visit adds a stamp. Pick from five hand-crafted card designs that match your brand's feel — classic, espresso, mocha, oat, or paper. Fill the card, unlock a spin.", color: "text-kowhai-gold", bg: "bg-kowhai-amber/8" },
-  { icon: Gift, title: "Custom Reward Wheel", description: "Set your own prizes — free drinks, discounts, cuts, upgrades, merch. The gamified spin wheel delights customers and drives repeat visits.", color: "text-terracotta", bg: "bg-terracotta/8" },
-  { icon: BarChart3, title: "Owner Dashboard", description: "Track visits, rewards redeemed, and customer trends. Real-time insights that help you understand your regulars better.", color: "text-kowhai-gold", bg: "bg-kowhai-amber/8" },
-  { icon: Palette, title: "Create Your Own Discounts", description: "Full control over what rewards you offer. Set up custom discounts, seasonal specials, or loyalty milestones that fit your business.", color: "text-terracotta", bg: "bg-terracotta/8" },
-  { icon: Shield, title: "Zero Setup Required", description: "No POS integration, no app downloads, no training. Print one QR code, put it on your counter, and you're live in minutes.", color: "text-fern", bg: "bg-fern/8" },
-  { icon: UserCheck, title: "AI-Generated Follow-Up Lists", description: "AI automatically generates personalized follow-up lists for lapsed customers and regulars. You're in control — decide when and how to reach out with targeted campaigns.", color: "text-fern", bg: "bg-fern/8" },
+const visuals = [
+  { icon: Stamp, color: "text-kowhai-gold", bg: "bg-kowhai-amber/8" },
+  { icon: Gift, color: "text-terracotta", bg: "bg-terracotta/8" },
+  { icon: BarChart3, color: "text-kowhai-gold", bg: "bg-kowhai-amber/8" },
+  { icon: Palette, color: "text-terracotta", bg: "bg-terracotta/8" },
+  { icon: Shield, color: "text-fern", bg: "bg-fern/8" },
+  { icon: UserCheck, color: "text-fern", bg: "bg-fern/8" },
 ];
 
 export default function Features() {
+  const { t } = useI18n();
+  const features = t.features.items.map((item, i) => ({ ...item, ...visuals[i] }));
+
   return (
     <section id="features" className="relative py-20 md:py-28 bg-white overflow-hidden">
       <div className="absolute bottom-0 left-[-10%] w-[600px] h-[600px] rounded-full bg-fern/[0.03] blur-3xl" />
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16 md:mb-20">
-          <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>Platform Features</span>
+          <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-kowhai-deep/60 mb-4" style={{ fontFamily: "var(--font-body)" }}>{t.features.eyebrow}</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl text-espresso leading-tight max-w-3xl mx-auto" style={{ fontFamily: "var(--font-display)" }}>
-            Everything Your Business Needs to{" "}<span className="text-kowhai-gold">Thrive</span>
+            {t.features.titleA}{" "}<span className="text-kowhai-gold">{t.features.titleB}</span>
           </h2>
-          <p className="mt-5 text-lg text-espresso-light/70 max-w-xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>A complete loyalty platform that runs itself. More regulars, stronger community.</p>
+          <p className="mt-5 text-lg text-espresso-light/70 max-w-xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>{t.features.subhead}</p>
         </motion.div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {features.map((feature, i) => (
