@@ -36,7 +36,7 @@ export const en = {
       },
       {
         title: "Can't justify big marketing spend",
-        description: "Every dollar counts. Paid ads and loyalty platforms designed for chains feel bloated, expensive, and built for someone else's business.",
+        description: "Every dollar counts. Big marketing spends are hard to justify, and most loyalty platforms feel bloated and not built for your kind of business.",
       },
     ],
   },
@@ -271,7 +271,7 @@ export const zh: Messages = {
       },
       {
         title: "营销预算有限难以投入",
-        description: "每一块钱都很重要。为连锁店打造的付费广告和忠诚度平台显得繁琐、昂贵，根本不是为您这样的生意设计的。",
+        description: "每一块钱都很重要。大额营销投入难以为继，多数忠诚度平台又过于繁琐，根本不是为您这样的生意设计的。",
       },
     ],
   },
