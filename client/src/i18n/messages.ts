@@ -89,17 +89,33 @@ export const en = {
   },
   features: {
     eyebrow: "Platform Features",
-    titleA: "Everything Your Business Needs to",
-    titleB: "Thrive",
     subhead: "A complete loyalty platform that runs itself. More regulars, stronger community.",
-    items: [
-      { title: "Custom Stamp Cards", description: "Every visit adds a stamp. Pick from five hand-crafted card designs that match your brand's feel — classic, espresso, mocha, oat, or paper. Fill the card, unlock a spin." },
-      { title: "Custom Reward Wheel", description: "Set your own prizes — free drinks, discounts, cuts, upgrades, merch. The gamified spin wheel delights customers and drives repeat visits." },
-      { title: "Owner Dashboard", description: "Track visits, rewards redeemed, and customer trends. Real-time insights that help you understand your regulars better." },
-      { title: "Create Your Own Discounts", description: "Full control over what rewards you offer. Set up custom discounts, seasonal specials, or loyalty milestones that fit your business." },
-      { title: "Zero Setup Required", description: "No POS integration, no app downloads, no training. Print one QR code, put it on your counter, and you're live in minutes." },
-      { title: "AI-Generated Follow-Up Lists", description: "AI automatically generates personalized follow-up lists for lapsed customers and regulars. You're in control — decide when and how to reach out with targeted campaigns." },
-    ],
+    tabs: {
+      owners: "Business Owners",
+      customers: "Customers",
+    },
+    owners: {
+      titleA: "Everything Your Business Needs to",
+      titleB: "Thrive",
+      items: [
+        { title: "Custom Stamp Cards", description: "Every visit adds a stamp. Pick from five hand-crafted card designs that match your brand's feel — classic, espresso, mocha, oat, or paper. Fill the card, unlock a spin." },
+        { title: "Custom Reward Wheel", description: "Set your own prizes — free drinks, discounts, cuts, upgrades, merch. The gamified spin wheel delights customers and drives repeat visits." },
+        { title: "Owner Dashboard", description: "Track visits, rewards redeemed, and customer trends. Real-time insights that help you understand your regulars better." },
+        { title: "Create Your Own Discounts", description: "Full control over what rewards you offer. Set up custom discounts, seasonal specials, or loyalty milestones that fit your business." },
+        { title: "Zero Setup Required", description: "No POS integration, no app downloads, no training. Print one QR code, put it on your counter, and you're live in minutes." },
+        { title: "AI-Generated Follow-Up Lists", description: "AI automatically generates personalized follow-up lists for lapsed customers and regulars. You're in control — decide when and how to reach out with targeted campaigns." },
+      ],
+    },
+    customers: {
+      titleA: "Everything Your Customers",
+      titleB: "Get In Return",
+      items: [
+        { title: "Auto-Enrolled Membership", description: "One scan and you're in. Your digital membership card is issued automatically — no app to install, no signup forms, no friction." },
+        { title: "Reward On Your First Visit", description: "Leave a quick Google review on your first scan and unlock a free spin on the reward wheel — drinks, discounts, or upgrades." },
+        { title: "Stamps Toward The Next Spin", description: "Every visit afterwards adds a stamp to your card. Fill the card and earn another spin for more rewards." },
+        { title: "One-Tap Redemption", description: "Vouchers live in your phone wallet. Show staff, tap redeem at the counter, done in seconds." },
+      ],
+    },
   },
   infographic: {
     titleA: "How it works:",
@@ -308,17 +324,33 @@ export const zh: Messages = {
   },
   features: {
     eyebrow: "平台功能",
-    titleA: "您生意所需的一切，助您",
-    titleB: "蓬勃发展",
     subhead: "一套自动运转的完整忠诚度平台。更多回头客，更稳固的社群。",
-    items: [
-      { title: "定制印章卡", description: "每次到店盖一枚印章。从五款精心设计的卡面中挑选，契合您品牌气质——经典、浓缩、摩卡、燕麦或纸质。集满印章，解锁一次抽奖。" },
-      { title: "定制奖品转盘", description: "自由设定奖品——免费饮品、折扣、剪发服务、升级套餐、周边商品。游戏化转盘让顾客愉悦，驱动回头消费。" },
-      { title: "店主数据看板", description: "追踪到店次数、奖励兑换情况和顾客趋势。实时洞察助您更深入地了解常客。" },
-      { title: "自定义优惠", description: "完全掌控奖励内容。设置定制折扣、季节特惠或忠诚度里程碑，灵活契合您的生意。" },
-      { title: "零设置上手", description: "无需对接POS，无需下载App，无需培训。打印一个二维码、放在柜台上，几分钟内即可上线。" },
-      { title: "AI生成的回访名单", description: "AI自动为流失顾客和常客生成个性化回访名单。何时、如何精准触达，由您掌握。" },
-    ],
+    tabs: {
+      owners: "店主",
+      customers: "顾客",
+    },
+    owners: {
+      titleA: "您生意所需的一切，助您",
+      titleB: "蓬勃发展",
+      items: [
+        { title: "定制印章卡", description: "每次到店盖一枚印章。从五款精心设计的卡面中挑选，契合您品牌气质——经典、浓缩、摩卡、燕麦或纸质。集满印章，解锁一次抽奖。" },
+        { title: "定制奖品转盘", description: "自由设定奖品——免费饮品、折扣、剪发服务、升级套餐、周边商品。游戏化转盘让顾客愉悦，驱动回头消费。" },
+        { title: "店主数据看板", description: "追踪到店次数、奖励兑换情况和顾客趋势。实时洞察助您更深入地了解常客。" },
+        { title: "自定义优惠", description: "完全掌控奖励内容。设置定制折扣、季节特惠或忠诚度里程碑，灵活契合您的生意。" },
+        { title: "零设置上手", description: "无需对接POS，无需下载App，无需培训。打印一个二维码、放在柜台上，几分钟内即可上线。" },
+        { title: "AI生成的回访名单", description: "AI自动为流失顾客和常客生成个性化回访名单。何时、如何精准触达，由您掌握。" },
+      ],
+    },
+    customers: {
+      titleA: "您的顾客也能",
+      titleB: "尽享回报",
+      items: [
+        { title: "扫码即入会", description: "扫一下二维码，立即加入。数字会员卡自动发放——无需下载App，无需填写表单，毫无摩擦。" },
+        { title: "首次到店即可获奖", description: "首次扫码后留下Google好评，立即获得一次奖品转盘抽奖——免费饮品、折扣或升级套餐。" },
+        { title: "持续集印章，再获抽奖", description: "之后每次到店都会盖一枚印章。集满一张卡，又能再次抽奖赢得更多奖励。" },
+        { title: "一键兑换好礼", description: "奖品存入您的手机钱包。到店出示并轻点兑换即可，几秒钟搞定。" },
+      ],
+    },
   },
   infographic: {
     titleA: "运作方式：",
