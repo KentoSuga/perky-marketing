@@ -24,7 +24,7 @@ export const en = {
     items: [
       {
         title: "Google reviews aren't growing",
-        description: "You do great work — coffee, cuts, plates, service — but barely anyone leaves a Google review. Your rating stalls while new customers keep walking past to the chain down the road.",
+        description: "You do great work — coffee, cuts, plates, service — but barely anyone leaves a Google review. Your rating stalls while new customers keep walking past to another shop down the road.",
       },
       {
         title: "First-time visitors don't come back",
@@ -259,7 +259,7 @@ export const zh: Messages = {
     items: [
       {
         title: "Google好评迟迟不增长",
-        description: "您的咖啡、剪发、菜品、服务都做得很好，却几乎没人留Google好评。评分原地踏步，新顾客却纷纷走向街角的连锁店。",
+        description: "您的咖啡、剪发、菜品、服务都做得很好，却几乎没人留Google好评。评分原地踏步，新顾客却纷纷走向街角的别家店。",
       },
       {
         title: "首次到店的客人不再回头",
