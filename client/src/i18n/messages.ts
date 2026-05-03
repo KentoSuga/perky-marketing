@@ -28,7 +28,7 @@ export const en = {
       },
       {
         title: "First-time visitors don't come back",
-        description: "Someone pops in once, you never see them again. Without a reason to return, every visit is a one-off — and every new regular is pure luck.",
+        description: "Someone pops in once, you never see them again. Without a reason to return, every visit becomes a one-off.",
       },
       {
         title: "No visibility into your customers",
@@ -263,7 +263,7 @@ export const zh: Messages = {
       },
       {
         title: "首次到店的客人不再回头",
-        description: "客人来过一次，再也没出现。少了一个回头的理由，每次到店都是一次性消费——每一位新常客都靠运气。",
+        description: "客人来过一次，再也没出现。少了一个回头的理由，每次到店都成了一次性消费。",
       },
       {
         title: "看不到自己的顾客画像",
